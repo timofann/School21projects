@@ -232,7 +232,10 @@ journalctl _COMM=sudo -q | grep "COMMAND" | wc -l
  	2.	sudo lighty-enable-mod fastcgi-php  
  	3.	sudo service lighttpd force-reload  
  Создать файл sudo vim /var/www/html/phpinfo.php  
- Содержание файла: <?php phpinfo(); ?>  
+ Содержимое файла:
+ 
+     <?php phpinfo(); ?>
+ 
  В браузере перейти по ссылке http://localhost:80/phpinfo.php
  
 ### Команды для Maria DB  
