@@ -1,8 +1,24 @@
 # B2BR info
  
+ [Virtual Box](https://github.com/timofann/School21projects/tree/main/Born2beroot#virtual-box)  
+ [Начало работы](https://github.com/timofann/School21projects/tree/main/Born2beroot#начало-работы)  
+ [sudo](https://github.com/timofann/School21projects/tree/main/Born2beroot#sudo)  
+ [AppArmor](https://github.com/timofann/School21projects/tree/main/Born2beroot#apparmor)  
+ [SSH](https://github.com/timofann/School21projects/tree/main/Born2beroot#ssh)  
+ [UFW](https://github.com/timofann/School21projects/tree/main/Born2beroot#ufw)  
+ [Подключение к серверу по SSH](https://github.com/timofann/School21projects/tree/main/Born2beroot#подключение-к-серверу-по-ssh)  
+ [Политика паролей](https://github.com/timofann/School21projects/tree/main/Born2beroot#политика-паролей)  
+ [Добавление и удаление пользователей и групп](https://github.com/timofann/School21projects/tree/main/Born2beroot#добавление-и-удаление-пользователей-и-групп)  
+ [Мониторинг состояния системы с cron](https://github.com/timofann/School21projects/tree/main/Born2beroot#мониторинг-состояния-системы-с-cron)  
+ [Веб-сервер LIGHTTPD](https://github.com/timofann/School21projects/tree/main/Born2beroot#веб-сервер-lighttpd)  
+ [PHP](https://github.com/timofann/School21projects/tree/main/Born2beroot#php)  
+ [Команды для Maria-DB](https://github.com/timofann/School21projects/tree/main/Born2beroot#команды-для-maria-db)  
+ [WordPress](https://github.com/timofann/School21projects/tree/main/Born2beroot#wordpress)  
+ [Fail2Ban](https://github.com/timofann/School21projects/tree/main/Born2beroot#fail2ban)  
+
  Гайд Александра @stycho:  
  https://github.com/lesnoyleshyi/born_to_be_root/blob/main/guide
- 
+
 ### Virtual Box  
    
  Кроссплатформенное приложение для запуска гостевых ОС на хосте. Может использоваться для запуска серверов, создания серверных приложений, для тестирования ПО, тестирования настроек системы и безопасного использования небезопасных источников, для оптимального использования дискового пространства и электричества, исключающего приобретение дополнительных физических машин.  
@@ -244,18 +260,18 @@ journalctl _COMM=sudo -q | grep "COMMAND" | wc -l
  sudo systemctl status mariadb  
  sudo mysql_secure_installation  
  sudo mariadb   
- CREATE DATABASE database;  
- SHOW DATABASES;  
- DROP DATABASE database;  
- CREATE USER 'user'@'localhost' IDENTIFIED BY ‘password’;  
- DROP USER 'user'@'localhost';  
- SHOW GRANTS FOR 'user'@'localhost';  
- GRANT <PRIV_TYPE> ON database.table TO 'user'@'localhost';  
- GRANT <PRIV_TYPE> database.* TO 'user'@'localhost';  
- REVOKE <PRIV_TYPE> ON database.table FROM 'user'@'localhost';  
- GRANT <PRIV_TYPE>, GRANT OPTION ON database.table TO 'user'@'localhost';  
- REVOKE <PRIV_TYPE>, GRANT OPTION ON database.table FROM 'user'@'localhost';  
- FLUSH PRIVILEGES;  
+ CREATE DATABASE database; - создание новой базы данных с названием database   
+ SHOW DATABASES; - выводит список доступных баз данных  
+ DROP DATABASE database; - удаление базы данных  
+ CREATE USER 'user'@'localhost' IDENTIFIED BY ‘password’; - создание пользователя user с паролем password   
+ DROP USER 'user'@'localhost'; - удаление пользователя  
+ SHOW GRANTS FOR 'user'@'localhost'; - показать права пользователя user  
+ GRANT <PRIV_TYPE> ON database.table TO 'user'@'localhost'; - назначить права типа <PRIV_TYPE> (например, ALL) пользователю user для работы с таблицей database.table  
+ GRANT <PRIV_TYPE> database.* TO 'user'@'localhost'; - назначить права типа <PRIV_TYPE> (например, ALL) пользователю user для работы со всеми таблицами базы данных database  
+ REVOKE <PRIV_TYPE> ON database.table FROM 'user'@'localhost'; - отобрать определенные права работы с таблицей database.table у user  
+ GRANT <PRIV_TYPE>, GRANT OPTION ON database.table TO 'user'@'localhost';  - назначить права, включая административные 
+ REVOKE <PRIV_TYPE>, GRANT OPTION ON database.table FROM 'user'@'localhost';  - отобрать права, включая административные
+ FLUSH PRIVILEGES; - подтвердить изменение прав (обязательно для сохранения изменений!)  
  exit  
  Необходимо создать базу данных, пользователя, дать пользователю права для управления базой данных (ALL), утвердить права и выйти.
  
