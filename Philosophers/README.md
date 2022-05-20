@@ -1,6 +1,6 @@
 # Dinning philosophers problem
 
-[Полное описание](https://github.com/timofann/School21projects/new/main/Philosophers#общий-принцип-работы)
+[Полное описание ниже](https://github.com/timofann/School21projects/tree/main/Philosophers#общий-принцип-работы)
 
 Mandatory part compilation and run:
 
